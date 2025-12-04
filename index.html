@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snake Levels (IN MAZE) – Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Maze Of Snakes</h1>
+        <p class="subtitle">Modern Snake with persistent levels</p>
+      </header>
+
+      <main class="app-main">
+        <section class="sidebar">
+          <h2>Levels</h2>
+          <ul id="level-list" class="level-list"></ul>
+
+          <div class="level-actions">
+            <button id="btn-play" class="btn primary">Play Selected</button>
+            <button id="btn-new-level" class="btn">New Random Level</button>
+            <button id="btn-reset" class="btn danger">Reset Defaults</button>
+          </div>
+
+          <div id="level-details" class="level-details"></div>
+
+          <div class="level-details" style="margin-top:6px;">
+            <h3>Target settings</h3>
+            <p style="margin-bottom:4px;">
+              Override target score for <strong>all levels</strong>:
+            </p>
+            <input
+              id="target-input"
+              type="number"
+              min="1"
+              placeholder="Leave empty to use level default"
+              style="width:100%;padding:4px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#05070c;color:#ecf0f1;font-size:0.8rem;"
+            />
+          </div>
+
+          <div class="help">
+            <h3>Controls</h3>
+            <p>Arrow keys / WASD to move</p>
+            <p>Space / Enter to pause</p>
+            <p>Esc to stop and return to menu</p>
+          </div>
+        </section>
+
+        <section class="game-area">
+          <canvas id="game-canvas" width="960" height="720"></canvas>
+          <div id="overlay" class="overlay hidden">
+            <div class="overlay-content">
+              <h2 id="overlay-title"></h2>
+              <p id="overlay-subtitle"></p>
+              <button id="overlay-close" class="btn primary">Back to Menu</button>
+            </div>
+          </div>
+          <div class="hud">
+            <span id="hud-level">Level: –</span>
+            <span id="hud-score">Score: 0 / 0</span>
+            <span id="hud-speed">Speed: –</span>
+            <span id="hud-wrap">Wrap: –</span>
+          </div>
+          
+          <!-- Mobile Controls -->
+          <div id="mobile-controls" class="mobile-controls hidden">
+            <div class="mobile-controls-row">
+              <button id="btn-up" class="mobile-btn mobile-btn-up" aria-label="Up">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
+              </button>
+            </div>
+            <div class="mobile-controls-row">
+              <button id="btn-left" class="mobile-btn mobile-btn-left" aria-label="Left">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+              </button>
+              <button id="btn-pause" class="mobile-btn mobile-btn-pause" aria-label="Pause">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+              </button>
+              <button id="btn-right" class="mobile-btn mobile-btn-right" aria-label="Right">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 19l7-7-7-7"/>
+                </svg>
+              </button>
+            </div>
+            <div class="mobile-controls-row">
+              <button id="btn-down" class="mobile-btn mobile-btn-down" aria-label="Down">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span>Snake Levels Web – Demo project</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
