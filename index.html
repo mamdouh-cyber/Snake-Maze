@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snake Levels (IN MAZE) – Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Maze Of Snakes</h1>
+        <p class="subtitle">Modern Snake with persistent levels</p>
+      </header>
+
+      <main class="app-main">
+        <section class="sidebar">
+          <h2>Levels</h2>
+          <ul id="level-list" class="level-list"></ul>
+
+          <div class="level-actions">
+            <button id="btn-play" class="btn primary">Play Selected</button>
+            <button id="btn-new-level" class="btn">New Random Level</button>
+            <button id="btn-reset" class="btn danger">Reset Defaults</button>
+          </div>
+
+          <div id="level-details" class="level-details"></div>
+
+          <div class="help">
+            <h3>Controls</h3>
+            <p>Arrow keys / WASD to move</p>
+            <p>Space / Enter to pause</p>
+            <p>Esc to stop and return to menu</p>
+          </div>
+        </section>
+
+        <section class="game-area">
+          <canvas id="game-canvas" width="960" height="720"></canvas>
+          <div id="overlay" class="overlay hidden">
+            <div class="overlay-content">
+              <h2 id="overlay-title"></h2>
+              <p id="overlay-subtitle"></p>
+              <button id="overlay-close" class="btn primary">Back to Menu</button>
+            </div>
+          </div>
+          <div class="hud">
+            <span id="hud-level">Level: –</span>
+            <span id="hud-score">Score: 0 / 0</span>
+            <span id="hud-speed">Speed: –</span>
+            <span id="hud-wrap">Wrap: –</span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span>Snake Levels Web – Demo project</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
